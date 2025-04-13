@@ -10,10 +10,11 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-     axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/auth/signup`, {
+    const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/auth/signup`, {
   email,
-  password,
+  password
 });
+
 
       alert('Signup successful!');
       navigate('/login');
